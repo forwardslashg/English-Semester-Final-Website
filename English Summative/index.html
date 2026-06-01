@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Final Summative Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- FIXED: Background blur moved to the correct spot at the top of the body -->
+    <div class="bg-blur-container"></div>
+
+    <header class="main-header">
+        <h1 class="header-title">English Final Summative</h1>
+        <nav class="nav-bar">
+            <ul>
+                <!-- FIXED: Links now point to internal section IDs instead of separate files -->
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#impact">Part 1: Impact</a></li>
+                <li><a href="#skills">Part 2: Transferrable Skills</a></li>
+                <li><a href="#growth">Part 3: Growth</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Wrapped everything in a wrapper to manage layout flowing downwards -->
+    <main class="single-page-layout">
+        
+        <!-- SECTION 1: Your original 4 home tiles -->
+        <section id="home" class="home-grid">
+            <div class="tile course-info reveal-on-scroll">
+                <h2>About the Course</h2>
+                <p>Grade 9 English focuses on building foundational high school skills in reading, writing, and critical thinking. Throughout the year, the curriculum emphasizes analyzing various literary genres, including novels, short stories, and drama, while developing structured paragraph and essay-writing techniques. Students also practice oral communication through discussions and presentations to build confidence in expressing their ideas.</p>
+            </div>
+
+            <div class="tile reflection reveal-on-scroll">
+                <h2>My Experience</h2>
+                <p>Coming into Grade 9, the jump to high school English felt like a big step. This course challenged me to look past just the plot of a story and figure out why an author wrote it. My biggest achievement this year was improving my analytical skills. I learned how to back up my arguments with solid evidence from the text instead of just guessing. While speaking in front of the class was tough at first, I'm proud of how much more confident I've become in sharing my perspective.</p>
+            </div>
+
+            <div class="tile about-me reveal-on-scroll">
+                <h2>About Me</h2>
+                <p>Hello! My name is Aayush, and I am a Grade 9 student at Chinguacousy Secondary. This website is the final summative project for my English course, representing a semester of exploring literature, analyzing media, and developing my voice as a writer. Throughout this year, we dove into complex themes like identity and story-telling through texts like Motorcycles and Sweetgrass. This portfolio showcases my best work, from critical essays to creative pieces. Outside of English class, I enjoy coding and listening to music. I hope you enjoy exploring my growth as a student this term!</p>
+            </div>
+
+            <!-- Changed class to "tile image-tile" to match the hover rules -->
+            <div class="tile image-tile reveal-on-scroll">
+                <img src="static/about-me-pic.jpeg" alt="Aayush - Grade 9 Student" class="tile-pic">
+            </div>
+        </section>
+
+        <!-- ADDED SECTION 2: PART 1 (IMPACT) -->
+        <section id="impact" class="content-card reveal-on-scroll">
+            <h2>Part 1: Impact</h2>
+            <p>This section details the specific assignments, critical essays, or creative items from your Grade 9 English class that had the greatest learning impact. You can write your analysis paragraphs here or insert project details.</p>
+        </section>
+
+        <!-- ADDED SECTION 3: PART 2 (SKILLS) -->
+        <section id="skills" class="content-card reveal-on-scroll">
+            <h2>Part 2: Transferrable Skills</h2>
+            <p>Discuss the skills you picked up in English class that help you in real life or other subjects. For example, how essay planning helps with coding logic, or how presentation practice builds leadership confidence.</p>
+        </section>
+
+        <!-- ADDED SECTION 4: PART 3 (GROWTH) -->
+        <section id="growth" class="content-card reveal-on-scroll">
+            <h2>Part 3: Growth</h2>
+            <p>Reflect on your personal evolution from the beginning of the semester to the end. Detail how your reading speed, writing comprehension, and analysis depth matured over the school term.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Professional Portfolio</p>
+    </footer>
+
+    <!-- Combined JavaScript for Header Shrink & Creative Scroll Reveals -->
+    <script>
+        // 1. Header shrinking logic
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+            }
+        });
+
+        // 2. Creative Scroll Reveal Logic
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Animates once smoothly on scroll down
+                }
+            });
+        }, {
+            threshold: 0.15, // Triggers when 15% of the element is visible
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+    </script>
+</body>
+</html>
