@@ -15,6 +15,13 @@ body {
     font-family: Inter, sans-serif;
 }
 
+@font-face {
+    font-family: 'Sparkle Passion';
+    src: url('static/fonts/sparkle-passion.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* ==========================================
    PARALLAX BACKGROUND LAYERS
 ========================================== */

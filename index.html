@@ -6,7 +6,21 @@
 <title>English Portfolio</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.bunny.net/css?family=space-grotesk:400,700" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          // This creates a custom utility class called 'font-sparkle'
+          sparkle: ['Sparkle Passion', 'serif'], 
+        }
+      }
+    }
+  }
+</script>
+
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,7 +30,7 @@
 <div class="parallax-mid"></div>
 
 <section class="text-center text-white py-20 reveal-on-scroll">
-    <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight drop-shadow-lg">
+    <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight drop-shadow-lg font-sparkle">
         English Final Summative
     </h1>
 
