@@ -13,21 +13,12 @@
     theme: {
       extend: {
         fontFamily: {
-          // This creates a custom utility class called 'font-sparkle'
-          sparkle: ['Sparkle Passion', 'serif'], 
-        }
-      }
-    }
-  }
-</script>
-
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          // This creates a custom utility class called 'font-monograph'
-          sparkle: ['Monograph', 'serif'], 
+          // This maps to class="font-sparkle"
+          sparkle: ['Sparkle Passion', 'serif'],
+          
+          // FIXED: Changed key from 'sparkle:' to 'monograph:' 
+          // This maps to class="font-monograph"
+          monograph: ['Monograph', 'serif']
         }
       }
     }
@@ -43,11 +34,11 @@
 <div class="parallax-mid"></div>
 
 <section class="text-center text-white py-20 reveal-on-scroll">
-    <h1 class="text-6xl md:text-7xl font-normal tracking-widest uppercase drop-shadow-lg font-monograph">
+   <h1 class="text-6xl md:text-7xl font-normal tracking-widest uppercase drop-shadow-lg font-monograph">
         English Final Summative
     </h1>
 
-    <p class="text-xl mt-6 text-slate-200 max-w-2xl mx-auto leading-8 trackeing-widest font-sparkle">
+    <p class="text-xl mt-6 text-slate-200 max-w-2xl mx-auto leading-8 font-sparkle">
         A collection of my learning, growth, and writing development throughout Grade 9 English.
     </p>
 </section>
