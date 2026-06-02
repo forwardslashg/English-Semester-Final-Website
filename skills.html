@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>English Portfolio</title>
+<title>English Portfolio - Skills</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.bunny.net/css?family=space-grotesk:400,700" rel="stylesheet">
@@ -13,11 +13,7 @@
     theme: {
       extend: {
         fontFamily: {
-          // This maps to class="font-sparkle"
           sparkle: ['Sparkle Passion', 'serif'],
-          
-          // FIXED: Changed key from 'sparkle:' to 'monograph:' 
-          // This maps to class="font-monograph"
           monograph: ['Monograph', 'serif']
         }
       }
@@ -33,7 +29,7 @@
 <div class="parallax-bg"></div>
 <div class="parallax-mid"></div>
 
-<section id= "home" class="text-center text-white py-20 reveal-on-scroll">
+<section id="home" class="text-center text-white py-20 reveal-on-scroll">
    <h1 class="text-9xl md:text-8xl font-normal tracking-normal uppercase drop-shadow-lg font-monograph">
         English Final Summative
     </h1>
@@ -61,7 +57,7 @@
             </a>
 
             <a href="skills.html"
-                class="px-5 py-2 rounded-full bg-white/10 hover:bg-cyan-400/30 backdrop-blur-md transition">
+                class="px-5 py-2 rounded-full bg-cyan-500/40 backdrop-blur-md transition border border-cyan-400/30">
                 Skills
             </a>
 
@@ -82,45 +78,44 @@
     <p>Transferable skills from English...</p>
 </section>
 
-<section class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-        
-        <a href="index.html" class="tile reveal-on-scroll bg-gradient-to-br from-cyan-500/20 to-blue-600/20 backdrop-blur-md p-8 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block">
+<section class="w-full max-w-6xl mx-auto my-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+    
+        <a href="index.html" class="tile reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
             <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Home &rarr;</h3>
-            <p class="text-slate-300 text-sm">Return to the main landing dashboard and course introduction.</p>
+            <p class="text-slate-300 text-sm leading-relaxed">Return to the main landing dashboard and course introduction.</p>
         </a>
 
-        <a href="impact.html" class="tile reveal-on-scroll bg-gradient-to-br from-cyan-500/20 to-blue-600/20 backdrop-blur-md p-8 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block">
+        <a href="impact.html" class="tile reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
             <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Impact &rarr;</h3>
-            <p class="text-slate-300 text-sm">Explore how studying literary structural devices changed my perspective on communication.</p>
+            <p class="text-slate-300 text-sm leading-relaxed">Explore how studying literary structural devices changed my perspective on communication.</p>
         </a>
 
-        <a href="growth.html" class="tile reveal-on-scroll bg-gradient-to-br from-cyan-500/20 to-blue-600/20 backdrop-blur-md p-8 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block">
+        <a href="growth.html" class="tile reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
             <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Growth &rarr;</h3>
-            <p class="text-slate-300 text-sm">Analyze my overall academic improvement, writing milestones, and development.</p>
+            <p class="text-slate-300 text-sm leading-relaxed">Analyze my overall academic improvement, writing milestones, and development.</p>
         </a>
 
-    </section>
-</main>
+    </div>
+</section>
 
 </main>
 
 <script>
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.main-header');
-    header.classList.toggle('shrink', window.scrollY > 50);
+    if (header) header.classList.toggle('shrink', window.scrollY > 50);
 
     const scrollY = window.scrollY;
-
-    document.querySelector('.parallax-bg').style.transform =
-        `translateY(${scrollY * 0.15}px) scale(1.2)`;
-
-    document.querySelector('.parallax-mid').style.transform =
-        `translateY(${scrollY * 0.3}px)`;
+    if (document.querySelector('.parallax-bg')) {
+        document.querySelector('.parallax-bg').style.transform = `translateY(${scrollY * 0.15}px) scale(1.2)`;
+    }
+    if (document.querySelector('.parallax-mid')) {
+        document.querySelector('.parallax-mid').style.transform = `translateY(${scrollY * 0.3}px)`;
+    }
 });
 
-// reveal
 const reveal = document.querySelectorAll('.reveal-on-scroll');
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
         if (e.isIntersecting) {
@@ -128,29 +123,21 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 });
-
 reveal.forEach(el => observer.observe(el));
 
-// APPLE-STYLE TILT + MAGNETIC + SMOOTH
 const tiles = document.querySelectorAll('.tile');
-
 tiles.forEach(tile => {
-
     let tx = 0, ty = 0;
     let cx = 0, cy = 0;
 
     tile.addEventListener('mousemove', (e) => {
-
         const r = tile.getBoundingClientRect();
         const x = e.clientX - r.left;
         const y = e.clientY - r.top;
-
         const cx2 = r.width / 2;
         const cy2 = r.height / 2;
-
         tx = ((y - cy2) / cy2) * 10;
         ty = ((x - cx2) / cx2) * 10;
-
     });
 
     tile.addEventListener('mouseleave', () => {
@@ -159,19 +146,11 @@ tiles.forEach(tile => {
     });
 
     function animate() {
-
         cx += (tx - cx) * 0.08;
         cy += (ty - cy) * 0.08;
-
-        tile.style.transform =
-            `perspective(1200px)
-             rotateX(${cx}deg)
-             rotateY(${cy}deg)
-             translateZ(0px)`;
-
+        tile.style.transform = `perspective(1200px) rotateX(${cx}deg) rotateY(${cy}deg) translateZ(0px)`;
         requestAnimationFrame(animate);
     }
-
     animate();
 });
 </script>
