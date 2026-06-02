@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- PARALLAX LAYERS -->
+<div class="parallax-bg"></div>
+<div class="parallax-mid"></div>
+
+<!-- HERO-->
+<section class="text-center text-white py-20 reveal-on-scroll">
+    <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight drop-shadow-lg">
+        English Final Summative
+    </h1>
+
+    <p class="text-xl mt-6 text-slate-200 max-w-2xl mx-auto leading-8">
+        A collection of my learning, growth, and writing development throughout Grade 9 English.
+    </p>
+</section>
+
+<!-- HEADER -->
+<header class="main-header">
+
+    <h2 class="header-title">English Portfolio</h2>
+
+    <nav class="nav-bar mt-4">
+        <div class="flex justify-center gap-3 flex-wrap">
+
+            <a href="#home"
+               class="px-5 py-2 rounded-full bg-white/10 hover:bg-cyan-400/30 backdrop-blur-md transition">
+                Home
+            </a>
+
+            <a href="#impact"
+               class="px-5 py-2 rounded-full bg-white/10 hover:bg-cyan-400/30 backdrop-blur-md transition">
+                Impact
+            </a>
+
+            <a href="#skills"
+               class="px-5 py-2 rounded-full bg-white/10 hover:bg-cyan-400/30 backdrop-blur-md transition">
+                Skills
+            </a>
+
+            <a href="#growth"
+               class="px-5 py-2 rounded-full bg-white/10 hover:bg-cyan-400/30 backdrop-blur-md transition">
+                Growth
+            </a>
+
+        </div>
+    </nav>
+
+</header>
+
+<!-- MAIN -->
+<main class="max-w-6xl mx-auto px-6 flex flex-col gap-16">
+
+<!-- HOME -->
+<section id="home" class="home-grid">
+
+    <div class="tile reveal-on-scroll bg-white/90 backdrop-blur-md p-8">
+        <h2 class="text-2xl font-bold mb-3">About The Course</h2>
+        <p>Grade 9 English focuses on building foundational high school skills in reading, writing, and critical thinking. Throughout the year, the curriculum emphasizes analyzing various literary genres, including novels, short stories, and drama, while developing structured paragraph and essay-writing techniques. Students also practice oral communication through discussions and presentations to build confidence in expressing their ideas.</p>
+    </div>
+
+    <div class="tile reveal-on-scroll bg-white/90 backdrop-blur-md p-8">
+        <h2 class="text-2xl font-bold mb-3">My Experience</h2>
+        <p>Coming into Grade 9, the jump to high school English felt like a big step. This course challenged me to look past just the plot of a story and figure out why an author wrote it. My biggest achievement this year was improving my analytical skills. I learned how to back up my arguments with solid evidence from the text instead of just guessing. While speaking in front of the class was tough at first, I'm proud of how much more confident I've become in sharing my perspective.</p>
+    </div>
+
+    <div class="tile reveal-on-scroll bg-white/90 backdrop-blur-md p-8">
+        <h2 class="text-2xl font-bold mb-3">About Me</h2>
+        <p>Hello! My name is Aayush, and I am a Grade 9 student at Chinguacousy Secondary. This website is the final summative project for my English course, representing a semester of exploring literature, analyzing media, and developing my voice as a writer. Throughout this year, we dove into complex themes like identity and story-telling through texts like Motorcycles and Sweetgrass. This portfolio showcases my best work, from critical essays to creative pieces. Outside of English class, I enjoy coding and listening to music. I hope you enjoy exploring my growth as a student this term!</p>
+    </div>
+
+    <div class="tile reveal-on-scroll bg-white/90 backdrop-blur-md p-8 flex justify-center">
+        <div class="profile-glow">
+            <img src="static/about-me-pic.jpeg"
+                 class="w-56 h-56 rounded-full object-cover border-4 border-cyan-400">
+        </div>
+    </div>
+
+</section>
+
+<!-- SECTIONS -->
+<section id="impact" class="tile reveal-on-scroll bg-white/90 p-10">
+    <h2 class="text-3xl font-bold mb-4">Impact</h2>
+    <p>Literary devices aren't decorative, they're structural. A metaphor forces two ideas to collide. Foreshadowing builds investment before events occur. Irony creates distance that exposes, amuses, or deepens. Studying literature meant seeing language as deliberate choices, every word, image, and structure communicating beyond its literal meaning. I stopped asking what a text says and started asking how it creates meaning. These skills transferred everywhere: metaphors in political speeches, symbolism in advertising, irony in everyday conversation. I became a more critical reader and a more intentional writer. This learning shifted how I approach all communication, not just literature. I now notice metaphors in political speeches, symbolism in advertising, and irony in everyday conversation. It also made me a more intentional writer. Understanding devices gave me a toolkit: I could use repetition to build emphasis, contrast to highlight difference, or extended metaphor to make an abstract idea concrete and memorable.
+</p>
+</section>
+
+<section id="skills" class="tile reveal-on-scroll bg-white/90 p-10">
+    <h2 class="text-3xl font-bold mb-4">Skills</h2>
+    <p>Transferable skills from English...</p>
+</section>
+
+<section id="growth" class="tile reveal-on-scroll bg-white/90 p-10">
+    <h2 class="text-3xl font-bold mb-4">Growth</h2>
+    <p>My improvement over the semester...</p>
+</section>
+
+</main>
+
+<!-- JS -->
+<script>
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.main-header');
+    header.classList.toggle('shrink', window.scrollY > 50);
+
+    const scrollY = window.scrollY;
+
+    document.querySelector('.parallax-bg').style.transform =
+        `translateY(${scrollY * 0.15}px) scale(1.2)`;
+
+    document.querySelector('.parallax-mid').style.transform =
+        `translateY(${scrollY * 0.3}px)`;
+});
+
+// reveal
+const reveal = document.querySelectorAll('.reveal-on-scroll');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+        }
+    });
+});
+
+reveal.forEach(el => observer.observe(el));
+
+// APPLE-STYLE TILT + MAGNETIC + SMOOTH
+const tiles = document.querySelectorAll('.tile');
+
+tiles.forEach(tile => {
+
+    let tx = 0, ty = 0;
+    let cx = 0, cy = 0;
+
+    tile.addEventListener('mousemove', (e) => {
+
+        const r = tile.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+
+        const cx2 = r.width / 2;
+        const cy2 = r.height / 2;
+
+        tx = ((y - cy2) / cy2) * 10;
+        ty = ((x - cx2) / cx2) * 10;
+
+    });
+
+    tile.addEventListener('mouseleave', () => {
+        tx = 0;
+        ty = 0;
+    });
+
+    function animate() {
+
+        cx += (tx - cx) * 0.08;
+        cy += (ty - cy) * 0.08;
+
+        tile.style.transform =
+            `perspective(1200px)
+             rotateX(${cx}deg)
+             rotateY(${cy}deg)
+             translateZ(0px)`;
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+});
+</script>
+
+</body>
+</html>
