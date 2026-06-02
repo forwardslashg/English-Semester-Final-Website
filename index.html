@@ -6,17 +6,15 @@
 <title>English Portfolio</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- PARALLAX LAYERS -->
 <div class="parallax-bg"></div>
 <div class="parallax-mid"></div>
 
-<!-- HERO-->
 <section class="text-center text-white py-20 reveal-on-scroll">
     <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight drop-shadow-lg">
         English Final Summative
@@ -27,7 +25,6 @@
     </p>
 </section>
 
-<!-- HEADER -->
 <header class="main-header">
 
     <h2 class="header-title">English Portfolio</h2>
@@ -60,10 +57,8 @@
 
 </header>
 
-<!-- MAIN -->
 <main class="max-w-6xl mx-auto px-6 flex flex-col gap-16">
 
-<!-- HOME -->
 <section id="home" class="home-grid">
 
     <div class="tile reveal-on-scroll bg-white/90 backdrop-blur-md p-8">
@@ -90,11 +85,18 @@
 
 </section>
 
-<!-- SECTIONS -->
-<section id="impact" class="tile reveal-on-scroll bg-white/90 p-10">
-    <h2 class="text-3xl font-bold mb-4">Impact</h2>
-    <p>Literary devices aren't decorative, they're structural. A metaphor forces two ideas to collide. Foreshadowing builds investment before events occur. Irony creates distance that exposes, amuses, or deepens. Studying literature meant seeing language as deliberate choices, every word, image, and structure communicating beyond its literal meaning. I stopped asking what a text says and started asking how it creates meaning. These skills transferred everywhere: metaphors in political speeches, symbolism in advertising, irony in everyday conversation. I became a more critical reader and a more intentional writer. This learning shifted how I approach all communication, not just literature. I now notice metaphors in political speeches, symbolism in advertising, and irony in everyday conversation. It also made me a more intentional writer. Understanding devices gave me a toolkit: I could use repetition to build emphasis, contrast to highlight difference, or extended metaphor to make an abstract idea concrete and memorable.
-</p>
+<section id="impact" class="tile reveal-on-scroll bg-white/90 p-10 flex flex-col md:flex-row items-center gap-8">
+    <div class="flex-1">
+        <h2 class="text-3xl font-bold mb-4">Impact</h2>
+        <p>Literary devices aren't decorative, they're structural. Studying literature taught me to ask not what a text says, but how it creates meaning. Metaphor, symbolism, personification, imagery: each one layers depth beneath the surface. Those skills transferred everywhere: into how I read, write, and communicate. Once you understand how language is built, you can't unsee it.</p>
+    </div>
+    
+    <div class="flex-shrink-0 flex justify-center">
+        <div class="literary-glow">
+            <img src="static/literary.png"
+                 class="w-56 h-56 rounded-full object-cover border-4 border-cyan-400">
+        </div>
+    </div>
 </section>
 
 <section id="skills" class="tile reveal-on-scroll bg-white/90 p-10">
@@ -109,7 +111,6 @@
 
 </main>
 
-<!-- JS -->
 <script>
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.main-header');
