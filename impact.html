@@ -272,17 +272,6 @@ if (viewport && track) {
         const rect = viewport.getBoundingClientRect();
         const mouseXInViewport = e.clientX - rect.left;
         const percentage = mouseXInViewport / rect.width;
-        
-        // Pause automated css keyframe looping structure when mouse actively manipulates alignment
-        track.style.animationPlayState = 'paused';
-        
-        const maximumScrollableWidth = viewport.scrollWidth - rect.width;
-        if (maximumScrollableWidth > 0) {
-            viewport.scrollTo({
-                left: maximumScrollableWidth * percentage,
-                behavior: 'smooth'
-            });
-        }
     });
 
     // Resume global automated looping whenever cursor leaves active window panel bounds
