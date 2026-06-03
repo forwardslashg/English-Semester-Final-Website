@@ -263,22 +263,7 @@ tiles.forEach(tile => {
     animate();
 });
 
-// NEW: MOUSE-TRACKING HOVER SIDE-SCROLLER MATH LOGIC
-const viewport = document.getElementById('carousel-viewport');
-const track = document.getElementById('carousel-track');
 
-if (viewport && track) {
-    viewport.addEventListener('mousemove', (e) => {
-        const rect = viewport.getBoundingClientRect();
-        const mouseXInViewport = e.clientX - rect.left;
-        const percentage = mouseXInViewport / rect.width;
-    });
-
-    // Resume global automated looping whenever cursor leaves active window panel bounds
-    viewport.addEventListener('mouseleave', () => {
-        track.style.animationPlayState = 'running';
-    });
-}
 
 // NEW: MODAL OVERLAY LIGHTBOX ACTIONS
 function openDeviceModal(title, text) {
