@@ -31,16 +31,19 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  /* Continuous smooth track animation for passive motion */
+  
+  /* FIXED: Smooth, seamless layout translation rule */
   @keyframes loop-scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
+  
   .animate-loop {
     display: flex;
     width: max-content;
-    animation: loop-scroll 40s linear infinite;
+    animation: loop-scroll 30s linear infinite;
   }
+  
   .animate-loop:hover {
     animation-play-state: paused;
   }
@@ -117,58 +120,54 @@
         
         <div id="carousel-track" class="animate-loop gap-6 py-2">
             
-            <div class="flex gap-6">
-                <div onclick="openDeviceModal('Metaphor', 'A figure of speech that makes a direct comparison between two unrelated things by stating one thing is another, without using like or as. Example: The classroom was a zoo.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition">
-                    <h3 class="text-xl font-bold text-slate-900 font-sans">Metaphor</h3>
-                    <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
-                </div>
-                <div onclick="openDeviceModal('Simile', 'A figure of speech that compares two different things using explicit connecting words such as like or as. Example: He was as brave as a lion.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition">
-                    <h3 class="text-xl font-bold text-slate-900 font-sans">Simile</h3>
-                    <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
-                </div>
-                <div onclick="openDeviceModal('Personification', 'A literary device where non-human things, animals, or abstract concepts are given human attributes, emotions, or behaviors. Example: The wind whispered in the night.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition">
-                    <h3 class="text-xl font-bold text-slate-900 font-sans">Personification</h3>
-                    <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
-                </div>
-                <div onclick="openDeviceModal('Symbolism', 'The structural use of symbols to represent abstract ideas, themes, or deeper qualities beyond their literal meaning. Example: A physical black crow representing impending bad luck.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition">
-                    <h3 class="text-xl font-bold text-slate-900 font-sans">Symbolism</h3>
-                    <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
-                </div>
-                <div onclick="openDeviceModal('Foreshadowing', 'A narrative technique where an author hints at upcoming plot points, actions, or structural twists later on in the story. Example: An early power flicker hinting at a massive storm.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition">
-                    <h3 class="text-xl font-bold text-slate-900 font-sans">Foreshadowing</h3>
-                    <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
-                </div>
-                <div onclick="openDeviceModal('Imagery', 'Vivid descriptive language that appeals heavily to the five physical human senses, allowing readers to visualize the text scene deeply. Example: The sharp scent of fresh pine needles and woodsmoke filled the frigid air.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition">
-                    <h3 class="text-xl font-bold text-slate-900 font-sans">Imagery</h3>
-                    <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
-                </div>
+            <div onclick="openDeviceModal('Metaphor', 'A figure of speech that makes a direct comparison between two unrelated things by stating one thing is another, without using like or as. Example: The classroom was a zoo.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
+                <h3 class="text-xl font-bold text-slate-900 font-sans">Metaphor</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            <div onclick="openDeviceModal('Simile', 'A figure of speech that compares two different things using explicit connecting words such as like or as. Example: He was as brave as a lion.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
+                <h3 class="text-xl font-bold text-slate-900 font-sans">Simile</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            <div onclick="openDeviceModal('Personification', 'A literary device where non-human things, animals, or abstract concepts are given human attributes, emotions, or behaviors. Example: The wind whispered in the night.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
+                <h3 class="text-xl font-bold text-slate-900 font-sans">Personification</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            <div onclick="openDeviceModal('Symbolism', 'The structural use of symbols to represent abstract ideas, themes, or deeper qualities beyond their literal meaning. Example: A physical black crow representing impending bad luck.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
+                <h3 class="text-xl font-bold text-slate-900 font-sans">Symbolism</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            <div onclick="openDeviceModal('Foreshadowing', 'A narrative technique where an author hints at upcoming plot points, actions, or structural twists later on in the story. Example: An early power flicker hinting at a massive storm.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
+                <h3 class="text-xl font-bold text-slate-900 font-sans">Foreshadowing</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            <div onclick="openDeviceModal('Imagery', 'Vivid descriptive language that appeals heavily to the five physical human senses, allowing readers to visualize the text scene deeply. Example: The sharp scent of fresh pine needles and woodsmoke filled the frigid air.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
+                <h3 class="text-xl font-bold text-slate-900 font-sans">Imagery</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
             </div>
 
-            <div class="flex gap-6" aria-hidden="true">
-                <div onclick="openDeviceModal('Metaphor', 'A figure of speech that makes a direct comparison between two unrelated things by stating one thing is another, without using like or as. Example: The classroom was a zoo.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition">
-                    <h3 class="text-xl font-bold text-slate-900 font-sans">Metaphor</h3>
-                    <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
-                </div>
-                <div onclick="openDeviceModal('Simile', 'A figure of speech that compares two different things using explicit connecting words such as like or as. Example: He was as brave as a lion.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition">
-                    <h3 class="text-xl font-bold text-slate-900 font-sans">Simile</h3>
-                    <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
-                </div>
-                <div onclick="openDeviceModal('Personification', 'A literary device where non-human things, animals, or abstract concepts are given human attributes, emotions, or behaviors. Example: The wind whispered in the night.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition">
-                    <h3 class="text-xl font-bold text-slate-900 font-sans">Personification</h3>
-                    <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
-                </div>
-                <div onclick="openDeviceModal('Symbolism', 'The structural use of symbols to represent abstract ideas, themes, or deeper qualities beyond their literal meaning. Example: A physical black crow representing impending bad luck.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition">
-                    <h3 class="text-xl font-bold text-slate-900 font-sans">Symbolism</h3>
-                    <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
-                </div>
-                <div onclick="openDeviceModal('Foreshadowing', 'A narrative technique where an author hints at upcoming plot points, actions, or structural twists later on in the story. Example: An early power flicker hinting at a massive storm.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition">
-                    <h3 class="text-xl font-bold text-slate-900 font-sans">Foreshadowing</h3>
-                    <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
-                </div>
-                <div onclick="openDeviceModal('Imagery', 'Vivid descriptive language that appeals heavily to the five physical human senses, allowing readers to visualize the text scene deeply. Example: The sharp scent of fresh pine needles and woodsmoke filled the frigid air.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition">
-                    <h3 class="text-xl font-bold text-slate-900 font-sans">Imagery</h3>
-                    <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
-                </div>
+            <div onclick="openDeviceModal('Metaphor', 'A figure of speech that makes a direct comparison between two unrelated things by stating one thing is another, without using like or as. Example: The classroom was a zoo.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
+                <h3 class="text-xl font-bold text-slate-900 font-sans">Metaphor</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            <div onclick="openDeviceModal('Simile', 'A figure of speech that compares two different things using explicit connecting words such as like or as. Example: He was as brave as a lion.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
+                <h3 class="text-xl font-bold text-slate-900 font-sans">Simile</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            <div onclick="openDeviceModal('Personification', 'A literary device where non-human things, animals, or abstract concepts are given human attributes, emotions, or behaviors. Example: The wind whispered in the night.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
+                <h3 class="text-xl font-bold text-slate-900 font-sans">Personification</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            <div onclick="openDeviceModal('Symbolism', 'The structural use of symbols to represent abstract ideas, themes, or deeper qualities beyond their literal meaning. Example: A physical black crow representing impending bad luck.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
+                <h3 class="text-xl font-bold text-slate-900 font-sans">Symbolism</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            <div onclick="openDeviceModal('Foreshadowing', 'A narrative technique where an author hints at upcoming plot points, actions, or structural twists later on in the story. Example: An early power flicker hinting at a massive storm.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
+                <h3 class="text-xl font-bold text-slate-900 font-sans">Foreshadowing</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            <div onclick="openDeviceModal('Imagery', 'Vivid descriptive language that appeals heavily to the five physical human senses, allowing readers to visualize the text scene deeply. Example: The sharp scent of fresh pine needles and woodsmoke filled the frigid air.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
+                <h3 class="text-xl font-bold text-slate-900 font-sans">Imagery</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
             </div>
 
         </div>
