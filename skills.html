@@ -98,6 +98,64 @@
         </div>
     </div>
 </section>
+
+<section class="w-full overflow-hidden relative py-4">
+    <h2 class="text-3xl font-bold text-white mb-6 font-monograph tracking-wide">Core Transferable Skills</h2>
+    
+    <div id="skills-carousel-viewport" class="overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing rounded-2xl bg-black/20 p-4 backdrop-blur-sm select-none">
+        
+        <div class="flex gap-6 py-2 w-max">
+            
+            <div onclick="openDeviceModal('Critical Thinking & Problem Solving', 'The ability to deeply analyze information, break down complex arguments, look past surface-level details, and construct logical, evidence-based conclusions to solve real-world challenges.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Critical Thinking &amp; Problem Solving</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Innovation, Creativity &amp; Entrepreneurship', 'Approaching challenges from unconventional angles, turning imaginative insights into tangible realities, and developing a growth mindset that embraces creative risk-taking.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Innovation &amp; Creativity</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Self-Directed Learning', 'Taking ownership of your own academic growth by setting personal milestones, managing time effectively, and independently seeking out solutions to complex concepts.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Self-Directed Learning</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Collaboration', 'Working effectively within diverse team settings by respecting distinct viewpoints, sharing responsibilities fairly, and coordinating collective efforts to achieve a unified goal.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Collaboration</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Communication', 'The art of articulating complex thoughts cleanly, actively listening to others, and designing your written, spoken, and visual arguments to impact your target audience.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Communication</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Global Citizenship &amp; Sustainability', 'Understanding the interconnected nature of global communities, examining cultural identities, and making ethical, socially responsible decisions to protect our shared future.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Global Citizenship</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Digital Literacy', 'Navigating modern technology environments responsibly, selecting digital production workflows intentionally, and building a professional, safe digital footprint.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Digital Literacy</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div id="modal-container" class="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50 px-4">
+    <div class="bg-white max-w-lg w-full p-8 rounded-2xl shadow-2xl border-2 border-cyan-400 relative transform scale-95 transition-transform duration-300" id="modal-box">
+        <button onclick="closeDeviceModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-2xl font-bold">&times;</button>
+        <h3 id="modal-title" class="text-3xl font-bold text-slate-900 mb-4 font-sans border-b pb-2 border-slate-100">Skill Title</h3>
+        <p id="modal-desc" class="text-slate-700 text-base leading-relaxed mb-6">Skill core descriptions compile here.</p>
+        <div class="flex justify-end">
+            <button onclick="closeDeviceModal()" class="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-semibold hover:opacity-90 transition">Close Skill</button>
+        </div>
+    </div>
+</div>
+
 <section class="w-full max-w-6xl mx-auto my-4">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
     
@@ -173,6 +231,38 @@ tiles.forEach(tile => {
     }
     animate();
 });
+
+// DYNAMIC CLICK-AND-DRAG SCROLL INTERACTION FOR SKILLS
+const skillsSlider = document.getElementById('skills-carousel-viewport');
+let isSkillsDown = false;
+let skillsStartX;
+let skillsScrollLeft;
+
+if (skillsSlider) {
+    skillsSlider.addEventListener('mousedown', (e) => {
+        isSkillsDown = true;
+        skillsStartX = e.pageX - skillsSlider.offsetLeft;
+        skillsScrollLeft = skillsSlider.scrollLeft;
+        skillsSlider.style.scrollBehavior = 'auto'; // Instant drag reaction tracking
+    });
+
+    skillsSlider.addEventListener('mouseleave', () => {
+        isSkillsDown = false;
+    });
+
+    skillsSlider.addEventListener('mouseup', () => {
+        isSkillsDown = false;
+        skillsSlider.style.scrollBehavior = 'smooth';
+    });
+
+    skillsSlider.addEventListener('mousemove', (e) => {
+        if (!isSkillsDown) return;
+        e.preventDefault();
+        const x = e.pageX - skillsSlider.offsetLeft;
+        const walk = (x - skillsStartX) * 1.5; // Controls the drag velocity scaling
+        skillsSlider.scrollLeft = skillsScrollLeft - walk;
+    });
+}
 </script>
 
 </body>
