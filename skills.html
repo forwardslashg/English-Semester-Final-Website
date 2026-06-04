@@ -32,7 +32,7 @@
     scrollbar-width: none;
   }
 
-  /* FIXED: Pure CSS Passive Seamless Loop Engine */
+  /* Pure CSS Passive Seamless Loop Engine */
   @keyframes loop-scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -261,20 +261,20 @@
     </div>
 </div>
 
-<section class="w-full max-w-6xl mx-auto my-4">
+<section class="w-full max-w-6xl mx-auto my-4 relative z-10">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
     
-        <a href="index.html" class="tile reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
+        <a href="index.html" class="nav-tile reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
             <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Home &rarr;</h3>
             <p class="text-slate-300 text-sm leading-relaxed">Return to the main landing dashboard and course introduction.</p>
         </a>
 
-        <a href="impact.html" class="tile reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
+        <a href="impact.html" class="nav-tile reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
             <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Impact &rarr;</h3>
             <p class="text-slate-300 text-sm leading-relaxed">Explore how studying literary structural devices changed my perspective on communication.</p>
         </a>
 
-        <a href="growth.html" class="tile reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
+        <a href="growth.html" class="nav-tile reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
             <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Growth &rarr;</h3>
             <p class="text-slate-300 text-sm leading-relaxed">Analyze my overall academic improvement, writing milestones, and development.</p>
         </a>
@@ -310,9 +310,9 @@ const observer = new IntersectionObserver((entries) => {
 });
 reveal.forEach(el => observer.observe(el));
 
-// Magnetic 3D interaction engine for static cards 
-const tiles = document.querySelectorAll('.tile');
-tiles.forEach(tile => {
+// FIXED: Magnetic 3D interaction selector splits main tiles vs nav links safely
+const mainTiles = document.querySelectorAll('.tile');
+mainTiles.forEach(tile => {
     let tx = 0, ty = 0;
     let cx = 0, cy = 0;
 
@@ -327,14 +327,42 @@ tiles.forEach(tile => {
     });
 
     tile.addEventListener('mouseleave', () => {
-        tx = 0;
-        ty = 0;
+        tx = 0; ty = 0;
     });
 
     function animate() {
         cx += (tx - cx) * 0.08;
         cy += (ty - cy) * 0.08;
         tile.style.transform = `perspective(1200px) rotateX(${cx}deg) rotateY(${cy}deg) translateZ(0px)`;
+        requestAnimationFrame(animate);
+    }
+    animate();
+});
+
+// FIXED: Added an isolated tracking instance explicitly running for the footer cards
+const navTiles = document.querySelectorAll('.nav-tile');
+navTiles.forEach(tile => {
+    let tx = 0, ty = 0;
+    let cx = 0, cy = 0;
+
+    tile.addEventListener('mousemove', (e) => {
+        const r = tile.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+        const cx2 = r.width / 2;
+        const cy2 = r.height / 2;
+        tx = ((y - cy2) / cy2) * 8; // Slightly more subdued rotation matrix to stay clean
+        ty = ((x - cx2) / cx2) * 8;
+    });
+
+    tile.addEventListener('mouseleave', () => {
+        tx = 0; ty = 0;
+    });
+
+    function animate() {
+        cx += (tx - cx) * 0.08;
+        cy += (ty - cy) * 0.08;
+        tile.style.transform = `perspective(800px) rotateX(${cx}deg) rotateY(${cy}deg) translateZ(0px)`;
         requestAnimationFrame(animate);
     }
     animate();
