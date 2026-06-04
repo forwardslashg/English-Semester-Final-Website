@@ -22,6 +22,17 @@
 </script>
 
 <link rel="stylesheet" href="style.css">
+<style>
+  /* Custom utility styles for clean carousel scrolling */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+  }
+</style>
 </head>
 
 <body>
@@ -94,7 +105,7 @@
     <div class="flex-shrink-0 flex items-center justify-center w-full md:w-auto mt-6 md:mt-0">
         <div class="profile-glow"> 
             <img src="static/skills1.png"
-                class="w-[920px] h-[692px] rounded-2xl object-cover border-4 border-cyan-400 shadow-md">
+                class="w-[115px] h-[87px] rounded-2xl object-cover border-4 border-cyan-400 shadow-md">
         </div>
     </div>
 </section>
@@ -262,6 +273,27 @@ if (skillsSlider) {
         const walk = (x - skillsStartX) * 1.5; // Controls the drag velocity scaling
         skillsSlider.scrollLeft = skillsScrollLeft - walk;
     });
+}
+
+// INTERACTIVE POPUP MODAL CONTROL ACTUATORS
+function openDeviceModal(title, text) {
+    const modal = document.getElementById('modal-container');
+    const box = document.getElementById('modal-box');
+    document.getElementById('modal-title').innerText = title;
+    document.getElementById('modal-desc').innerText = text;
+    
+    modal.classList.remove('opacity-0', 'pointer-events-none');
+    box.classList.remove('scale-95');
+    box.classList.add('scale-100');
+}
+
+function closeDeviceModal() {
+    const modal = document.getElementById('modal-container');
+    const box = document.getElementById('modal-box');
+    
+    modal.classList.add('opacity-0', 'pointer-events-none');
+    box.classList.remove('scale-100');
+    box.classList.add('scale-95');
 }
 </script>
 
