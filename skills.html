@@ -115,7 +115,7 @@
     
     <div id="skills-carousel-viewport" class="overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing rounded-2xl bg-black/20 p-4 backdrop-blur-sm select-none">
         
-        <div class="flex gap-6 py-2 w-max">
+        <div id="skills-carousel-track" class="flex gap-6 py-2 w-max">
             
             <div onclick="openDeviceModal('Critical Thinking & Problem Solving', 'The ability to deeply analyze information, break down complex arguments, look past surface-level details, and construct logical, evidence-based conclusions to solve real-world challenges.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0">
                 <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Critical Thinking &amp; Problem Solving</h3>
@@ -243,18 +243,19 @@ tiles.forEach(tile => {
     animate();
 });
 
-// DYNAMIC CLICK-AND-DRAG SCROLL INTERACTION FOR SKILLS
+// FIXED: DYNAMIC CLICK-AND-DRAG SCROLL ENGINE WITH NATURAL TRACKPAD/WHEEL ACCESS
 const skillsSlider = document.getElementById('skills-carousel-viewport');
 let isSkillsDown = false;
 let skillsStartX;
 let skillsScrollLeft;
 
 if (skillsSlider) {
+    // 1. Click-and-drag mechanics
     skillsSlider.addEventListener('mousedown', (e) => {
         isSkillsDown = true;
         skillsStartX = e.pageX - skillsSlider.offsetLeft;
         skillsScrollLeft = skillsSlider.scrollLeft;
-        skillsSlider.style.scrollBehavior = 'auto'; // Instant drag reaction tracking
+        skillsSlider.style.scrollBehavior = 'auto'; 
     });
 
     skillsSlider.addEventListener('mouseleave', () => {
@@ -270,9 +271,18 @@ if (skillsSlider) {
         if (!isSkillsDown) return;
         e.preventDefault();
         const x = e.pageX - skillsSlider.offsetLeft;
-        const walk = (x - skillsStartX) * 1.5; // Controls the drag velocity scaling
+        const walk = (x - skillsStartX) * 1.8; // Snappy scroll speed multiplier
         skillsSlider.scrollLeft = skillsScrollLeft - walk;
     });
+
+    // 2. Continuous Trackpad/Mouse Wheel horizontal axis mapping
+    skillsSlider.addEventListener('wheel', (e) => {
+        if (e.deltaY !== 0) {
+            e.preventDefault();
+            skillsSlider.style.scrollBehavior = 'auto'; // Seamless native transition tracking
+            skillsSlider.scrollLeft += e.deltaY;
+        }
+    }, { passive: false });
 }
 
 // INTERACTIVE POPUP MODAL CONTROL ACTUATORS
