@@ -73,54 +73,93 @@
 
 <main class="max-w-6xl mx-auto px-6 flex flex-col gap-16 min-h-[60vh]">
 
-<section id="home" class="home-grid">
-
-    <div class="tile reveal-on-scroll bg-white/90 backdrop-blur-md p-8">
-        <h2 class="text-2xl font-bold mb-3">About The Course</h2>
-        <p>Grade 9 English focuses on building foundational high school skills in reading, writing, and critical thinking. Throughout the year, the curriculum emphasizes analyzing various literary genres, including novels, short stories, and drama, while developing structured paragraph and essay-writing techniques. Students also practice oral communication through discussions and presentations to build confidence in expressing their ideas.</p>
-    </div>
-
-    <div class="tile reveal-on-scroll bg-white/90 backdrop-blur-md p-8">
-        <h2 class="text-2xl font-bold mb-3">My Experience</h2>
-        <p>Coming into Grade 9, the jump to high school English felt like a big step. This course challenged me to look past just the plot of a story and figure out why an author wrote it. My biggest achievement this year was improving my analytical skills. I learned how to back up my arguments with solid evidence from the text instead of just guessing. While speaking in front of the class was tough at first, I'm proud of how much more confident I've become in sharing my perspective.</p>
-    </div>
-
-    <div class="tile reveal-on-scroll bg-white/90 backdrop-blur-md p-8">
-        <h2 class="text-2xl font-bold mb-3">About Me</h2>
-        <p>Hello! My name is Aayush, and I am a Grade 9 student at Chinguacousy Secondary. This website is the final summative project for my English course, representing a semester of exploring literature, analyzing media, and developing my voice as a writer. Throughout this year, we dove into complex themes like identity and story-telling through texts like Motorcycles and Sweetgrass. This portfolio showcases my best work, from critical essays to creative pieces. Outside of English class, I enjoy coding and listening to music. I hope you enjoy exploring my growth as a student this term!</p>
-    </div>
-
-    <div class="tile reveal-on-scroll bg-white/90 backdrop-blur-md p-8 flex justify-center">
-        <div class="profile-glow">
-            <img src="static/about-me-pic.jpeg"
-                 class="w-56 h-56 rounded-full object-cover border-4 border-cyan-400">
+    <section id="about-me" class="reveal-on-scroll bg-white/90 p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 overflow-hidden rounded-2xl shadow-lg border-l-4 border-cyan-500">
+        <div class="flex-shrink-0 flex justify-center w-full md:w-auto">
+            <div class="profile-glow">
+                <img src="static/about-me-pic.jpeg" alt="Aayush Profile Portrait"
+                     class="w-56 h-56 rounded-2xl object-cover border-4 border-cyan-400 shadow-md">
+            </div>
         </div>
+        
+        <div class="flex-1">
+            <div class="flex items-center gap-2 text-cyan-600 font-bold uppercase text-xs tracking-wider mb-2">
+                <span>👋</span> Student Profile
+            </div>
+            <h2 class="text-3xl font-bold mb-4 text-slate-900 font-sans">Hello, I'm Aayush</h2>
+            <p class="text-slate-800 leading-relaxed mb-4">
+                Welcome to my digital repository. I am a Grade 9 student at **Chinguacousy Secondary School**, and this comprehensive portfolio serves as the final summative capstone for my English course. It represents an intensive semester dedicated to deconstructing complex literary frameworks, exploring multifaceted media landscapes, and refining my personal voice as a structural writer. 
+            </p>
+            <p class="text-slate-800 leading-relaxed">
+                Outside the realm of literary analytics, I actively immerse myself in programming, software logic, and digital audio tracking. This layout bridges my structural coding interests with the artistic nuances of language arts. I invite you to explore the milestones of my academic evolution below.
+            </p>
+        </div>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        
+        <section class="reveal-on-scroll bg-white/90 p-8 rounded-2xl shadow-lg flex flex-col justify-between">
+            <div>
+                <div class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Curriculum Pillars</div>
+                <h3 class="text-2xl font-bold mb-4 text-slate-900 font-sans border-b pb-2 border-slate-100">About The Course</h3>
+                <p class="text-slate-700 text-base leading-relaxed mb-4">
+                    Grade 9 English is strategically engineered to build foundational secondary-school competencies across critical text evaluation, precise evidence assembly, and rhetoric. 
+                </p>
+                <p class="text-slate-700 text-base leading-relaxed">
+                    Throughout the academic term, our syllabus prioritized multi-genre literacy, requiring deep encounters with canonical and contemporary novels, short stories, and complex drama. These readings served as the base for constructing advanced paragraph templates and formal multi-paragraph compositions.
+                </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-4 text-xs text-slate-500">
+                <span>📚 Novels & Short Stories</span>
+                <span>✍️ Paragraph Crafting</span>
+            </div>
+        </section>
+
+        <section class="reveal-on-scroll bg-white/90 p-8 rounded-2xl shadow-lg flex flex-col justify-between border-t-4 border-purple-500">
+            <div>
+                <div class="text-xs font-bold text-purple-500 uppercase tracking-widest mb-2">Reflective Log</div>
+                <h3 class="text-2xl font-bold mb-4 text-slate-900 font-sans border-b pb-2 border-slate-100">My Intellectual Journey</h3>
+                <p class="text-slate-700 text-base leading-relaxed mb-4">
+                    Transitioning into high school English brought forward an immediate shift in academic expectations. The primary challenge was moving entirely beyond basic plot recall toward unearthing an author's subtextual intent. 
+                </p>
+                <p class="text-slate-700 text-base leading-relaxed">
+                    Engaging deeply with central course texts, such as Drew Hayden Taylor's *Motorcycles & Sweetgrass*, forced me to challenge surface assumptions and approach issues like cultural identity and generational storytelling with analytical nuance. My writing evolved from opinionated summaries into sound, evidence-backed arguments.
+                </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-4 text-xs text-purple-600 font-semibold">
+                <span>🚀 Analytical Transition Completed</span>
+            </div>
+        </section>
+
     </div>
 
-</section> <section class="w-full max-w-6xl mx-auto my-4">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-    
-        <a href="impact.html" class="tile reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
-            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Impact &rarr;</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">Explore how studying literary structural devices changed my perspective on communication.</p>
-        </a>
+    <section class="w-full max-w-6xl mx-auto my-4 relative z-20">
+        <div class="text-center mb-8">
+            <h2 class="text-xl font-bold text-white uppercase tracking-widest font-monograph">Portfolio Navigation Architecture</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        
+            <a href="impact.html" class="tile bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
+                <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Impact &rarr;</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">Explore how studying literary structural devices and analytical frameworks changed my perspective on communication.</p>
+            </a>
 
-        <a href="skills.html" class="tile reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
-            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Skills &rarr;</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">View the core transferable high school skills developed over the semester.</p>
-        </a>
+            <a href="skills.html" class="tile bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
+                <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Skills &rarr;</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">View the core transferable high school skills, public speaking styles, and collaboration strategies developed over the semester.</p>
+            </a>
 
-        <a href="growth.html" class="tile reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
-            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Growth &rarr;</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">Analyze my overall academic improvement, writing milestones, and development.</p>
-        </a>
+            <a href="growth.html" class="tile bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
+                <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Growth &rarr;</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">Analyze my overall academic improvement, comprehensive writing milestones, revision tracking, and personal development.</p>
+            </a>
 
-    </div>
-</section>
+        </div>
+    </section>
 
 </main>
 
 <script>
+// Parallax background scroll tracking engine
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.main-header');
     if (header) header.classList.toggle('shrink', window.scrollY > 50);
@@ -134,6 +173,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Scroll Reveal Intersection Observer Engine
 const reveal = document.querySelectorAll('.reveal-on-scroll');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -144,6 +184,7 @@ const observer = new IntersectionObserver((entries) => {
 });
 reveal.forEach(el => observer.observe(el));
 
+// APPLE-STYLE TILT ENGINE (Targeted safely ONLY to lower interactive link cards)
 const tiles = document.querySelectorAll('.tile');
 tiles.forEach(tile => {
     let tx = 0, ty = 0;
@@ -160,8 +201,7 @@ tiles.forEach(tile => {
     });
 
     tile.addEventListener('mouseleave', () => {
-        tx = 0;
-        ty = 0;
+        tx = 0; ty = 0;
     });
 
     function animate() {
