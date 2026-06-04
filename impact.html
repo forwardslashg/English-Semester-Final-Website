@@ -32,7 +32,7 @@
     scrollbar-width: none;
   }
   
-  /* FIXED: Smooth, seamless layout translation rule */
+  /* Pure CSS Passive Seamless Loop Engine */
   @keyframes loop-scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -99,16 +99,21 @@
 
 <main class="max-w-6xl mx-auto px-6 flex flex-col gap-16 min-h-[60vh]">
 
-<section id="impact" class="tile reveal-on-scroll bg-white/90 p-10 flex flex-col md:flex-row items-center gap-8">
+<section id="impact-general" class="reveal-on-scroll bg-white/90 p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 overflow-hidden rounded-2xl shadow-lg">
     <div class="flex-1">
-        <h2 class="text-3xl font-bold mb-4">General</h2>
-        <p>Literary devices aren't just "for show," they're necessary to enhance your writing. Studying literary devices taught me to the sheer importance to creating life in a story. Metaphors, Similes, Foreshadowing, Symbolism, Personification, and Imagery: each one layers depth beneath the surface. Those skills transferred everywhere: into how I read, write, and communicate. Once you understand how literary devices improve essays, you can't stop using it.</p>
+        <h2 class="text-3xl font-bold mb-4 text-slate-900 font-sans border-b pb-2 border-slate-200">The Mechanics of Language</h2>
+        <p class="text-slate-800 leading-relaxed mb-4">
+            Literary devices are far more than aesthetic embellishments or rigid rules designed for simple identification; they serve as the vital architecture required to breathe life into a text. Studying these elements in depth has completely altered my understanding of narrative creation, teaching me how to look beneath surface-level words to discover structural intentionality. 
+        </p>
+        <p class="text-slate-800 leading-relaxed">
+            Metaphors, similes, foreshadowing, symbolism, personification, and sensory imagery each act as specific layers that sculpt a piece of writing. These stylistic frameworks have successfully integrated themselves into my broader academic lexicon, changing not only how I consume complex literature, but fundamentally transforming the clarity and persuasion of my daily communication workflows.
+        </p>
     </div>
     
-    <div class="flex-shrink-0 flex justify-center">
-        <div class="literary-glow">
-            <img src="static/literary.png"
-                 class="w-72 rounded-2xl object-cover border-4 border-cyan-400">
+    <div class="flex-shrink-0 flex justify-center w-full md:w-auto">
+        <div class="profile-glow">
+            <img src="static/literary.png" alt="Literary Architecture Image"
+                 class="w-[460px] h-[280px] rounded-2xl object-cover border-4 border-cyan-400 shadow-md">
         </div>
     </div>
 </section>
@@ -116,57 +121,67 @@
 <section class="w-full overflow-hidden relative py-4">
     <h2 class="text-3xl font-bold text-white mb-6 font-monograph tracking-wide">Literary Devices Glossary</h2>
     
-    <div id="carousel-viewport" class="overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing rounded-2xl bg-black/20 p-4 backdrop-blur-sm">
+    <div id="carousel-viewport" class="overflow-x-auto no-scrollbar rounded-2xl bg-black/20 p-4 backdrop-blur-sm">
         
-        <div id="carousel-track" class="animate-loop gap-6 py-2">
+        <div id="carousel-track" class="animate-loop py-2">
             
             <div onclick="openDeviceModal('Metaphor', 'A figure of speech that makes a direct comparison between two unrelated things by stating one thing is another, without using like or as. Example: The classroom was a zoo.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
-                <h3 class="text-xl font-bold text-slate-900 font-sans">Metaphor</h3>
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Metaphor</h3>
                 <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
             </div>
+            
             <div onclick="openDeviceModal('Simile', 'A figure of speech that compares two different things using explicit connecting words such as like or as. Example: He was as brave as a lion.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
-                <h3 class="text-xl font-bold text-slate-900 font-sans">Simile</h3>
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Simile</h3>
                 <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
             </div>
+            
             <div onclick="openDeviceModal('Personification', 'A literary device where non-human things, animals, or abstract concepts are given human attributes, emotions, or behaviors. Example: The wind whispered in the night.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
-                <h3 class="text-xl font-bold text-slate-900 font-sans">Personification</h3>
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Personification</h3>
                 <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
             </div>
+            
             <div onclick="openDeviceModal('Symbolism', 'The structural use of symbols to represent abstract ideas, themes, or deeper qualities beyond their literal meaning. Example: A physical black crow representing impending bad luck.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
-                <h3 class="text-xl font-bold text-slate-900 font-sans">Symbolism</h3>
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Symbolism</h3>
                 <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
             </div>
+            
             <div onclick="openDeviceModal('Foreshadowing', 'A narrative technique where an author hints at upcoming plot points, actions, or structural twists later on in the story. Example: An early power flicker hinting at a massive storm.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
-                <h3 class="text-xl font-bold text-slate-900 font-sans">Foreshadowing</h3>
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Foreshadowing</h3>
                 <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
             </div>
+            
             <div onclick="openDeviceModal('Imagery', 'Vivid descriptive language that appeals heavily to the five physical human senses, allowing readers to visualize the text scene deeply. Example: The sharp scent of fresh pine needles and woodsmoke filled the frigid air.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
-                <h3 class="text-xl font-bold text-slate-900 font-sans">Imagery</h3>
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Imagery</h3>
                 <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
             </div>
 
             <div onclick="openDeviceModal('Metaphor', 'A figure of speech that makes a direct comparison between two unrelated things by stating one thing is another, without using like or as. Example: The classroom was a zoo.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
-                <h3 class="text-xl font-bold text-slate-900 font-sans">Metaphor</h3>
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Metaphor</h3>
                 <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
             </div>
+            
             <div onclick="openDeviceModal('Simile', 'A figure of speech that compares two different things using explicit connecting words such as like or as. Example: He was as brave as a lion.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
-                <h3 class="text-xl font-bold text-slate-900 font-sans">Simile</h3>
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Simile</h3>
                 <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
             </div>
+            
             <div onclick="openDeviceModal('Personification', 'A literary device where non-human things, animals, or abstract concepts are given human attributes, emotions, or behaviors. Example: The wind whispered in the night.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
-                <h3 class="text-xl font-bold text-slate-900 font-sans">Personification</h3>
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Personification</h3>
                 <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
             </div>
+            
             <div onclick="openDeviceModal('Symbolism', 'The structural use of symbols to represent abstract ideas, themes, or deeper qualities beyond their literal meaning. Example: A physical black crow representing impending bad luck.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
-                <h3 class="text-xl font-bold text-slate-900 font-sans">Symbolism</h3>
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Symbolism</h3>
                 <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
             </div>
+            
             <div onclick="openDeviceModal('Foreshadowing', 'A narrative technique where an author hints at upcoming plot points, actions, or structural twists later on in the story. Example: An early power flicker hinting at a massive storm.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
-                <h3 class="text-xl font-bold text-slate-900 font-sans">Foreshadowing</h3>
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Foreshadowing</h3>
                 <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
             </div>
+            
             <div onclick="openDeviceModal('Imagery', 'Vivid descriptive language that appeals heavily to the five physical human senses, allowing readers to visualize the text scene deeply. Example: The sharp scent of fresh pine needles and woodsmoke filled the frigid air.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
-                <h3 class="text-xl font-bold text-slate-900 font-sans">Imagery</h3>
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Imagery</h3>
                 <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
             </div>
 
@@ -174,32 +189,47 @@
     </div>
 </section>
 
-<section id="personal-reflection" class="tile reveal-on-scroll bg-white/90 p-10 flex flex-col md:flex-row items-center gap-8">
-    <div class="flex-shrink-0 flex justify-center">
-        <div class="literary-glow">
-            <img src="static/literary2.png"
-                 class=" w-64 h-64 rounded-2xl object-cover border-4 border-cyan-400">
+<section id="personal-reflection" class="reveal-on-scroll bg-white/90 p-8 md:p-10 flex flex-col md:flex-row items-center gap-8 overflow-hidden rounded-2xl shadow-lg border-l-4 border-purple-500">
+    <div class="flex-shrink-0 flex justify-center w-full md:w-auto order-2 md:order-1">
+        <div class="profile-glow">
+            <img src="static/literary2.png" alt="Reflective Work Process"
+                 class="w-[400px] h-[280px] rounded-2xl object-cover border-4 border-purple-400 shadow-md">
         </div>
     </div>
+    
+    <div class="flex-1 order-1 md:order-2">
+        <div class="flex items-center gap-2 text-purple-600 font-bold uppercase text-xs tracking-wider mb-2">
+            <span>🧠</span> Perspective Shifts
+        </div>
+        <h2 class="text-3xl font-bold mb-4 text-slate-900 font-sans">How It Impacted My Voice</h2>
+        <p class="text-slate-800 leading-relaxed">
+            Entering this course, literary elements felt like static tools reserved strictly for high school flashcards, and I rarely utilized them with actual focus within my own drafting phases. However, developing an intentional comprehension of their internal functions has fundamentally updated my prose strategy. 
+        </p>
+        <p class="text-slate-800 leading-relaxed mt-3">
+            Instead of simply stating actions, I now deliberately engineer creative writing prompts and academic assignments with sharp metaphorical anchors to grab reader retention. Integrating subtle hints of foreshadowing and cohesive thematic symbolism turns what used to be shallow summary write-ups into dynamic narrative landscapes.
+        </p>
+    </div>
+</section>
+
+<section id="examples-of-use" class="reveal-on-scroll bg-white/90 p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 overflow-hidden rounded-2xl shadow-lg border-l-4 border-cyan-500">
     
     <div class="flex-1">
-        <h2 class="text-3xl font-bold mb-4">How It Impacted Me</h2>
-        <p>Entering this course, literary devices were a mostly unfamiliar concept to me, and I rarely utilized them intentionally in my writing. However, developing a deeper understanding of these tools has completely transformed my approach. I now actively enhance my stories and essays using metaphors and similes to hook the reader's attention, while integrating personification and symbolism to keep them deeply engaged with the narrative.</p>
-    </div>
-</section>
-
-<section id="examples-of-use" class="tile reveal-on-scroll bg-white/90 p-8 md:p-10 flex flex-col md:flex-row items-stretch justify-between gap-6 md:gap-8 overflow-hidden">
-    
-    <div class="flex-1 flex flex-col justify-center">
-        <h2 class="text-3xl font-bold mb-4 text-slate-900">Examples of Where I Used It</h2>
+        <div class="flex items-center gap-2 text-cyan-600 font-bold uppercase text-xs tracking-wider mb-2">
+            <span>📝</span> Portfolio Evidence Case
+        </div>
+        <h2 class="text-3xl font-bold mb-4 text-slate-900 font-sans">Execution Within Short Stories</h2>
+        <p class="text-slate-800 leading-relaxed mb-4">
+            The prime illustration of this developmental jump happened during our secondary unit focused on short story analysis and assembly. After auditing structural trends in classical literature, we were prompted to write an original fiction text from scratch. 
+        </p>
         <p class="text-slate-800 leading-relaxed">
-            One example of where I applied literary devices was during our second unit on short stories. In this unit, we analyzed several short stories and were then assigned to write our own. For the culminating task, I incorporated a variety of literary devices to enhance the quality of my writing, create a more engaging narrative, and provide readers with a more immersive experience.
+            For this creative task, instead of prioritizing basic plot resolution, I structured my scenes around overlapping patterns of imagery and personification. This deliberate design allowed me to replace direct narration with immersive environment tracking, resulting in an exceptionally clean and multi-layered final copy.
         </p>
     </div>
 
-    <div class="flex-shrink-0 flex items-center justify-center w-full md:w-auto mt-4 md:mt-0">
-        <div class="profile-glow"> <img src="static/literary3.png"
-                 class="md:w-56 md:h-56 rounded-2xl object-cover border-4 border-cyan-400 shadow-md">
+    <div class="flex-shrink-0 flex items-center justify-center w-full md:w-auto">
+        <div class="profile-glow"> 
+            <img src="static/literary3.png" alt="Short Story Writing Blueprint"
+                 class="w-[300px] h-[240px] rounded-2xl object-cover border-4 border-cyan-400 shadow-md">
         </div>
     </div>
 
@@ -216,20 +246,20 @@
     </div>
 </div>
 
-<section class="w-full max-w-6xl mx-auto my-4">
+<section class="w-full max-w-6xl mx-auto my-4 relative z-20">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
     
-        <a href="index.html" class="tile reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
+        <a href="index.html" class="tile bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
             <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Home &rarr;</h3>
             <p class="text-slate-300 text-sm leading-relaxed">Return to the main landing dashboard and course introduction.</p>
         </a>
 
-        <a href="skills.html" class="tile reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
+        <a href="skills.html" class="tile bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
             <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Skills &rarr;</h3>
             <p class="text-slate-300 text-sm leading-relaxed">View the core transferable high school skills developed over the semester.</p>
         </a>
 
-        <a href="growth.html" class="tile reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
+        <a href="growth.html" class="tile bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
             <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Growth &rarr;</h3>
             <p class="text-slate-300 text-sm leading-relaxed">Analyze my overall academic improvement, writing milestones, and development.</p>
         </a>
@@ -240,6 +270,7 @@
 </main>
 
 <script>
+// Parallax background handler
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.main-header');
     if (header) header.classList.toggle('shrink', window.scrollY > 50);
@@ -253,6 +284,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Scroll Reveal Observer setup
 const reveal = document.querySelectorAll('.reveal-on-scroll');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -263,9 +295,8 @@ const observer = new IntersectionObserver((entries) => {
 });
 reveal.forEach(el => observer.observe(el));
 
-// APPLE-STYLE TILT + MAGNETIC + SMOOTH ENGINE
+// APPLE-STYLE TILT + MAGNETIC + SMOOTH ENGINE (Targeting ONLY slider & link tiles)
 const tiles = document.querySelectorAll('.tile');
-
 tiles.forEach(tile => {
     let tx = 0, ty = 0;
     let cx = 0, cy = 0;
@@ -281,8 +312,7 @@ tiles.forEach(tile => {
     });
 
     tile.addEventListener('mouseleave', () => {
-        tx = 0;
-        ty = 0;
+        tx = 0; ty = 0;
     });
 
     function animate() {
@@ -294,9 +324,7 @@ tiles.forEach(tile => {
     animate();
 });
 
-
-
-// NEW: MODAL OVERLAY LIGHTBOX ACTIONS
+// MODAL OVERLAY LIGHTBOX ACTIONS
 function openDeviceModal(title, text) {
     const modal = document.getElementById('modal-container');
     const box = document.getElementById('modal-box');
