@@ -22,6 +22,33 @@
 </script>
 
 <link rel="stylesheet" href="style.css">
+<style>
+  /* Hide scrollbars completely */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Pure CSS Passive Seamless Loop Engine */
+  @keyframes loop-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  .animate-loop {
+    display: flex;
+    width: max-content;
+    animation: loop-scroll 35s linear infinite;
+  }
+  
+  /* Pauses the passive crawl beautifully when a user hovers over a skill card */
+  .animate-loop:hover {
+    animation-play-state: paused;
+  }
+</style>
 </head>
 
 <body>
@@ -29,86 +56,288 @@
 <div class="parallax-bg"></div>
 <div class="parallax-mid"></div>
 
-<section id="skills-hero" class="text-center text-white py-12 md:py-20 px-4 reveal-on-scroll">
-   <h1 class="text-5xl sm:text-7xl md:text-8xl font-normal tracking-normal uppercase drop-shadow-lg font-monograph leading-tight">
+<section id="home" class="text-center text-white py-20 reveal-on-scroll">
+   <h1 class="text-9xl md:text-8xl font-normal tracking-normal uppercase drop-shadow-lg font-monograph">
         Skills
-   </h1>
-    <p class="text-2xl md:text-4xl font-bold tracking-wide drop-shadow-lg font-sparkle mt-4">
-        Transferable competencies applied inside and outside the classroom.
+    </h1>
+
+    <p class="text-4xl md:text-4xl font-bold tracking-wide drop-shadow-lg font-sparkle">
+        The transferable skills I learned and can use in other fields.
     </p>
 </section>
 
-<header class="main-header px-4">
-    <h2 class="header-title text-xl md:text-2xl">English Portfolio</h2>
-    <nav class="nav-bar mt-4 w-full">
-        <div class="flex justify-center gap-2 md:gap-3 flex-wrap text-sm md:text-base">
-            <a href="index.html" class="px-4 py-2 rounded-full bg-white/10 hover:bg-cyan-400/30 backdrop-blur-md transition">Home</a>
-            <a href="impact.html" class="px-4 py-2 rounded-full bg-white/10 hover:bg-cyan-400/30 backdrop-blur-md transition">Impact</a>
-            <a href="skills.html" class="px-4 py-2 rounded-full bg-cyan-500/40 backdrop-blur-md transition border border-cyan-400/30">Skills</a>
-            <a href="growth.html" class="px-4 py-2 rounded-full bg-white/10 hover:bg-cyan-400/30 backdrop-blur-md transition">Growth</a>
+<header class="main-header">
+
+    <h2 class="header-title">English Portfolio</h2>
+
+    <nav class="nav-bar mt-4">
+        <div class="flex justify-center gap-3 flex-wrap">
+
+            <a href="index.html"
+                class="px-5 py-2 rounded-full bg-white/10 hover:bg-cyan-400/30 backdrop-blur-md transition">
+                Home
+            </a>
+
+            <a href="impact.html"
+                class="px-5 py-2 rounded-full bg-white/10 hover:bg-cyan-400/30 backdrop-blur-md transition">
+                Impact
+            </a>
+
+            <a href="skills.html"
+                class="px-5 py-2 rounded-full bg-cyan-500/40 backdrop-blur-md transition border border-cyan-400/30">
+                Skills
+            </a>
+
+            <a href="growth.html"
+            class="px-5 py-2 rounded-full bg-white/10 hover:bg-cyan-400/30 backdrop-blur-md transition">
+                Growth
+            </a>
+
         </div>
     </nav>
+
 </header>
 
-<main class="max-w-6xl mx-auto px-4 md:px-6 flex flex-col gap-12 md:gap-16 min-h-[60vh] pb-12">
+<main class="max-w-6xl mx-auto px-6 flex flex-col gap-16 min-h-[60vh] relative">
 
-    <section id="transferable-skills" class="reveal-on-scroll">
-        <div class="mb-6">
-            <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">Portfolio Evidence #2</span>
-            <h2 class="text-3xl font-bold text-white mt-2 font-sans">Core Transferable Skills</h2>
-        </div>
+<section id="general-skills" class="reveal-on-scroll bg-white/90 p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 overflow-hidden rounded-2xl shadow-lg">
+    
+    <div class="flex-1">
+        <h2 class="text-3xl font-bold mb-4 text-slate-900 font-sans border-b pb-2 border-slate-200">General Overview</h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
+        <p class="mb-4 text-slate-800 leading-relaxed">
+            Transferable skills represent the versatile talents and practical abilities developed in one context that can be seamlessly applied across entirely different fields. Prior to developing this portfolio, I had never formally encountered the concept of transferable skills, nor did I realize how interconnected my academic abilities truly were. This assignment served as an eye-opener, challenging me to look beyond the immediate requirements of a single classroom and recognize the broader value of what I was learning.
+        </p>
+
+        <p class="mb-4 text-slate-800 leading-relaxed">
+            Through this reflective process, I realized that the analytical skills I refined during this course are not confined strictly to English assignments. Learning how to dissect complex texts, identify underlying themes, and support my arguments with concrete evidence has fundamentally changed how I process information. I now see these competencies as universal tools rather than subject-specific rules.
+        </p>
+
+        <p class="text-slate-800 leading-relaxed">
+            Moving forward, I am excited to utilize these enhanced analytical abilities to elevate my performance in other classes. Whether I am interpreting data trends in science, evaluating historical perspectives in social studies, or structuring logical arguments in presentations, the skills I gained this semester will serve as a strong foundation for my future academic success.
+        </p>
+    </div>
+
+    <div class="flex-shrink-0 flex items-center justify-center w-full md:w-auto mt-6 md:mt-0">
+        <div class="profile-glow"> 
+            <img src="static/skills1.png"
+                class="w-[460px] h-[346px] rounded-2xl object-cover border-4 border-cyan-400 shadow-md">
+        </div>
+    </div>
+</section>
+
+<section class="w-full overflow-hidden relative py-4">
+    <h2 class="text-3xl font-bold text-white mb-6 font-monograph tracking-wide">Core Transferable Skills</h2>
+    
+    <div id="skills-carousel-viewport" class="overflow-x-auto no-scrollbar rounded-2xl bg-black/20 p-4 backdrop-blur-sm">
+        
+        <div id="skills-carousel-track" class="animate-loop py-2">
             
-            <div class="bg-white/90 p-6 md:p-8 rounded-2xl shadow-lg flex flex-col justify-between border-l-4 border-cyan-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <div>
-                    <h3 class="text-xl md:text-2xl font-bold mb-3 text-slate-900 font-sans border-b pb-2 border-slate-100">1. Critical Thinking & Problem Solving</h3>
-                    <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
-                        Critical thinking is a skill I consistently apply across both my academic endeavors and my personal life. Inside the classroom, this ability allows me to look beyond surface-level facts, whether I am analyzing the underlying motives behind a character's actions or evaluating the validity of different sources for a research project. 
-                    </p>
-                    <p class="text-slate-700 text-sm md:text-base leading-relaxed">
-                        Rather than just memorizing data, I actively question, dissect, and synthesize information, making it an indispensable tool for my overall intellectual development.
-                    </p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-cyan-600">
-                    Classroom Application: Text & Context Analysis
-                </div>
+            <div onclick="openDeviceModal('Critical Thinking & Problem Solving', 'The ability to deeply analyze information, break down complex arguments, look past surface-level details, and construct logical, evidence-based conclusions to solve real-world challenges.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Critical Thinking &amp; Problem Solving</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Innovation, Creativity &amp; Entrepreneurship', 'Approaching challenges from unconventional angles, turning imaginative insights into tangible realities, and developing a growth mindset that embraces creative risk-taking.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Innovation &amp; Creativity</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Self-Directed Learning', 'Taking ownership of your own academic growth by setting personal milestones, managing time effectively, and independently seeking out solutions to complex concepts.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Self-Directed Learning</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Collaboration', 'Working effectively within diverse team settings by respecting distinct viewpoints, sharing responsibilities fairly, and coordinating collective efforts to achieve a unified goal.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Collaboration</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Communication', 'The art of articulating complex thoughts cleanly, actively listening to others, and designing your written, spoken, and visual arguments to impact your target audience.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Communication</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Global Citizenship &amp; Sustainability', 'Understanding the interconnected nature of global communities, examining cultural identities, and making ethical, socially responsible decisions to protect our shared future.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Global Citizenship</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Digital Literacy', 'Navigating modern technology environments responsibly, selecting digital production workflows intentionally, and building a professional, safe digital footprint.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Digital Literacy</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
             </div>
 
-            <div class="bg-white/90 p-6 md:p-8 rounded-2xl shadow-lg flex flex-col justify-between border-l-4 border-purple-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <div>
-                    <h3 class="text-xl md:text-2xl font-bold mb-3 text-slate-900 font-sans border-b pb-2 border-slate-100">2. Digital Literacy</h3>
-                    <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
-                        Digital literacy is a fundamental competence, encompassing everything from technical proficiency to responsible digital citizenship. In my academic work, this skill is on display daily as I navigate software ecosystems, manage file directories, and write the custom code used to build this online portfolio. 
-                    </p>
-                    <p class="text-slate-700 text-sm md:text-base leading-relaxed">
-                        It also means knowing how to efficiently research, filter out online misinformation, and evaluate digital sources for accuracy to keep an organized, professional workflow.
-                    </p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-semibold text-purple-600">
-                    Real-World Use: Web Architecture & Research
-                </div>
+            <div onclick="openDeviceModal('Critical Thinking & Problem Solving', 'The ability to deeply analyze information, break down complex arguments, look past surface-level details, and construct logical, evidence-based conclusions to solve real-world challenges.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Critical Thinking &amp; Problem Solving</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Innovation, Creativity &amp; Entrepreneurship', 'Approaching challenges from unconventional angles, turning imaginative insights into tangible realities, and developing a growth mindset that embraces creative risk-taking.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Innovation &amp; Creativity</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Self-Directed Learning', 'Taking ownership of your own academic growth by setting personal milestones, managing time effectively, and independently seeking out solutions to complex concepts.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Self-Directed Learning</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Collaboration', 'Working effectively within diverse team settings by respecting distinct viewpoints, sharing responsibilities fairly, and coordinating collective efforts to achieve a unified goal.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Collaboration</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Communication', 'The art of articulating complex thoughts cleanly, actively listening to others, and designing your written, spoken, and visual arguments to impact your target audience.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Communication</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Global Citizenship &amp; Sustainability', 'Understanding the interconnected nature of global communities, examining cultural identities, and making ethical, socially responsible decisions to protect our shared future.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Global Citizenship</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
+            </div>
+            
+            <div onclick="openDeviceModal('Digital Literacy', 'Navigating modern technology environments responsibly, selecting digital production workflows intentionally, and building a professional, safe digital footprint.')" class="tile w-64 h-40 bg-white/95 backdrop-blur-md p-6 rounded-xl flex flex-col justify-between cursor-pointer shadow-lg hover:border-cyan-400 border border-transparent transition flex-shrink-0 mr-6" aria-hidden="true">
+                <h3 class="text-xl font-bold text-slate-900 font-sans leading-snug">Digital Literacy</h3>
+                <span class="text-cyan-500 font-semibold text-sm">Click to view &rarr;</span>
             </div>
 
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="out-of-school" class="reveal-on-scroll bg-white/90 p-6 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-8 overflow-hidden rounded-2xl shadow-lg border-l-4 border-emerald-500">
-        <div class="flex-1">
-            <div class="flex items-center gap-2 text-emerald-600 font-bold uppercase text-xs tracking-wider mb-2">
-                <span>🌐</span> Beyond Chinguacousy Secondary
+<section id="skills-content" class="reveal-on-scroll flex flex-col gap-8 relative z-10 w-full">
+    
+    <div class="w-full bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+        <h2 class="text-3xl font-bold text-white font-monograph tracking-wide">How &amp; Where I Applied Each Skill</h2>
+        <p class="text-slate-300 text-sm mt-2">A systematic overview of conceptual mastery across academic parameters.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <div class="bg-white/90 p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-cyan-400 flex flex-col gap-3">
+            <div class="flex items-center gap-2 text-cyan-600 font-bold uppercase text-xs tracking-wider">
+                <span>⚡</span> Competency 01
             </div>
-            <h2 class="text-2xl md:text-3xl font-bold mb-3 text-slate-900 font-sans">Application Outside the Classroom</h2>
-            <p class="text-slate-800 text-sm md:text-base leading-relaxed mb-4">
-                Outside of school, these skills come to the forefront when I am troubleshooting unexpected code errors in a computer science project or collaborating with a group to resolve conflicting ideas and keep a project on schedule. 
+            <h3 class="text-2xl font-bold text-slate-900">Critical Thinking &amp; Problem Solving</h3>
+            <p class="text-slate-800 text-sm leading-relaxed">
+                Critical thinking is a skill I have naturally relied on for years, consistently applying it across both my academic endeavors and my personal life. In the classroom, this ability has allowed me to look beyond surface-level facts, whether I am analyzing the underlying historical motives behind a global conflict or evaluating the validity of different sources for a research project. Outside of school, I leverage this same mindset to navigate daily challenges, break down complex problems logically, and make well-informed decisions. 
             </p>
-            <p class="text-slate-800 text-sm md:text-base leading-relaxed">
-                In my personal life, problem-solving translates into adaptability, allowing me to remain calm under pressure and break down sudden complications into manageable steps. Rather than viewing obstacles as dead ends, I treat them as puzzles that can be solved through patience and logical adjustment.
+            <p class="text-slate-800 text-sm leading-relaxed border-t pt-3 mt-1 border-slate-200">
+                Problem solving is a core capability that I have consistently exercised, serving as a practical tool in both my academic undertakings and my everyday experiences. In an educational setting, this skill comes to the forefront when I am troubleshooting unexpected code errors in a computer science project, or when collaborating with a group to resolve conflicting ideas and keep a project on schedule.
             </p>
         </div>
-    </section>
 
-    <section id="assignment-embed" class="reveal-on-scroll bg-white/90 p-6 md:p-8 rounded-2xl shadow-lg border-t-4 border-cyan-500">
+        <div class="bg-white/90 p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-purple-500 flex flex-col gap-3">
+            <div class="flex items-center gap-2 text-purple-600 font-bold uppercase text-xs tracking-wider">
+                <span>🎨</span> Competency 02
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900">Innovation, Creativity &amp; Entrepreneurship</h3>
+            <p class="text-slate-800 text-sm leading-relaxed">
+                Innovation and creativity have always driven my approach to learning, allowing me to bring unique perspectives to both my schoolwork and my personal projects. In an academic environment, this mindset shows up when I design visually engaging user interfaces for my web development assignments, or when I craft distinctive narrative voices and unconventional plot structures in my creative writing pieces to make them stand out.
+            </p>
+            <p class="text-slate-800 text-sm leading-relaxed border-t pt-3 mt-1 border-slate-200">
+                While I may not be running a commercial business, I consistently apply entrepreneurial principles to my academic projects and digital creations. In school, this shows up as strong project management, taking complete ownership of an assignment, researching the necessary tools independently, and organizing timelines to deliver high-quality results.
+            </p>
+        </div>
+
+        <div class="bg-white/90 p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-blue-500 flex flex-col gap-3">
+            <div class="flex items-center gap-2 text-blue-600 font-bold uppercase text-xs tracking-wider">
+                <span>🚀</span> Competency 03
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900">Self-Directed Learning</h3>
+            <p class="text-slate-800 text-sm leading-relaxed">
+                Self-directed learning has become the cornerstone of my academic and personal development, transforming the way I acquire new skills. In my schoolwork, this mindset is clear whenever I am introduced to a complex topic or a technical bottleneck; rather than waiting for step-by-step instructions, I take the initiative to seek out external documentation, tutorials, and resources to master the material independently. 
+            </p>
+            <p class="text-slate-800 text-sm leading-relaxed">
+                This exact portfolio is a product of that autonomy, as I managed my own timelines and pushed through layout challenges to build a polished final product. In my personal life, this trait drives me to learn advanced software programs, coding practices, and creative tools entirely on my own motivation.
+            </p>
+        </div>
+
+        <div class="bg-white/90 p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-emerald-500 flex flex-col gap-3">
+            <div class="flex items-center gap-2 text-emerald-600 font-bold uppercase text-xs tracking-wider">
+                <span>🤝</span> Competency 04
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900">Collaboration</h3>
+            <p class="text-slate-800 text-sm leading-relaxed">
+                Collaboration is a fundamental capability that I actively practice, recognizing that the strongest outcomes are often built on collective effort. Within an academic environment, this skill is vital during group presentations and shared laboratory experiments, where I work diligently to ensure all voices are heard, tasks are divided equitably, and individual strengths are utilized effectively.
+            </p>
+            <p class="text-slate-800 text-sm leading-relaxed">
+                In these settings, I focus on being a reliable teammate who communicates clearly and helps mediate differing viewpoints to keep the project moving forward. Learning how to balance leadership with supportive active listening has taught me that true collaboration is about elevating the entire team's performance, not just my own.
+            </p>
+        </div>
+
+        <div class="bg-white/90 p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-amber-500 flex flex-col gap-3">
+            <div class="flex items-center gap-2 text-amber-600 font-bold uppercase text-xs tracking-wider">
+                <span>🗣️</span> Competency 05
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900">Communication</h3>
+            <p class="text-slate-800 text-sm leading-relaxed">
+                Communication is a vital skill that I have continuously refined, recognizing it as the foundation for sharing ideas effectively and building strong connections. In an academic setting, this capability is central to how I structure my essays, deliver oral presentations, and participate in class discussions. Whether I am adjusting the tone of a piece of creative writing to capture a specific mood or articulating a complex thesis statement cleanly in an essay, my goal is always to make my arguments accessible and engaging for my audience.
+            </p>
+        </div>
+
+        <div class="bg-white/90 p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-rose-500 flex flex-col gap-3">
+            <div class="flex items-center gap-2 text-rose-600 font-bold uppercase text-xs tracking-wider">
+                <span>🌍</span> Competency 06
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900">Global Citizenship &amp; Sustainability</h3>
+            <p class="text-slate-800 text-sm leading-relaxed">
+                Global citizenship is a mindset centered on empathy, cultural awareness, and a deep understanding of our interconnected world. In my schoolwork, this skill is constantly put into practice when we analyze international literature, study historical world events, or explore global environmental issues. 
+            </p>
+            <p class="text-slate-800 text-sm leading-relaxed border-t pt-3 mt-1 border-slate-200">
+                Sustainability is a guiding principle focused on resourcefulness, environmental responsibility, and long-term awareness. In an academic setting, this mindset manifests when I study ecological systems in science, research resource distribution in social studies, or find ways to reduce physical waste during hands-on projects.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="bg-white/90 p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-indigo-500 flex flex-col gap-3">
+        <div class="flex items-center gap-2 text-indigo-600 font-bold uppercase text-xs tracking-wider">
+            <span>💻</span> Competency 07
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900">Digital Literacy</h3>
+        <p class="text-slate-800 text-sm leading-relaxed">
+            Digital literacy is a fundamental competence in today’s world, encompassing everything from technical proficiency to responsible digital citizenship. In my academic work, this skill is on display daily as I navigate complex software ecosystems, manage file directories, and write the custom code used to build this online portfolio. It also means knowing how to efficiently research, filter out online misinformation, and evaluate digital sources for accuracy. In my personal life, digital literacy translates into maintaining a secure, professional online presence, understanding data privacy, and quickly adapting to new digital tools and platforms as they evolve. By mastering these digital workflows, I have turned technology into a powerful asset that allows me to learn, create, and communicate safely and effectively in a highly connected environment.
+        </p>
+    </div>
+
+</section>
+
+<div id="modal-container" class="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50 px-4">
+    <div class="bg-white max-w-lg w-full p-8 rounded-2xl shadow-2xl border-2 border-cyan-400 relative transform scale-95 transition-transform duration-300" id="modal-box">
+        <button onclick="closeDeviceModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-2xl font-bold">&times;</button>
+        <h3 id="modal-title" class="text-3xl font-bold text-slate-900 mb-4 font-sans border-b pb-2 border-slate-100">Skill Title</h3>
+        <p id="modal-desc" class="text-slate-700 text-base leading-relaxed mb-6">Skill core descriptions compile here.</p>
+        <div class="flex justify-end">
+            <button onclick="closeDeviceModal()" class="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-semibold hover:opacity-90 transition">Close Skill</button>
+        </div>
+    </div>
+</div>
+
+<section class="w-full max-w-6xl mx-auto my-4 relative z-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+    
+        <a href="index.html" class="reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
+            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Home &rarr;</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">Return to the main landing dashboard and course introduction.</p>
+        </a>
+
+        <a href="impact.html" class="reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
+            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Impact &rarr;</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">Explore how studying literary structural devices changed my perspective on communication.</p>
+        </a>
+
+        <a href="growth.html" class="reveal-on-scroll bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition duration-300 group block h-full min-h-[200px]">
+            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">Growth &rarr;</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">Analyze my overall academic improvement, writing milestones, and development.</p>
+        </a>
+
+    </div>
+</section>
+
+<section id="assignment-embed" class="reveal-on-scroll bg-white/90 p-6 md:p-8 rounded-2xl shadow-lg border-t-4 border-cyan-500">
         <div class="mb-4">
             <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-sans">Course Assignment Artifact</h3>
             <p class="text-slate-600 text-sm mt-1">Review the raw document below containing the primary essay or project where these skills were directly implemented.</p>
@@ -124,43 +353,10 @@
         </div>
     </section>
 
-    <section id="looking-ahead-container" class="reveal-on-scroll">
-        <div class="tile bg-white/90 p-6 md:p-8 rounded-2xl shadow-lg border-l-4 border-amber-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-            <h3 class="text-xl md:text-2xl font-bold mb-3 text-slate-900 font-sans border-b pb-2 border-slate-100">Looking Ahead</h3>
-            <p class="text-slate-500 italic text-sm md:text-base leading-relaxed">
-                [Add your specific custom information regarding your future goals, skill developments, or upcoming targets here.]
-            </p>
-        </div>
-    </section>
-
-    <section class="w-full max-w-6xl mx-auto my-2 relative z-20">
-        <div class="text-center mb-6">
-            <h2 class="text-sm md:text-xl font-bold text-white uppercase tracking-widest font-monograph">Portfolio Navigation Architecture</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-start">
-        
-            <a href="index.html" class="tile bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-slate-200 group block h-full min-h-[160px] md:min-h-[200px] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-cyan-400">
-                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition">Home &rarr;</h3>
-                <p class="text-slate-700 text-xs md:text-sm leading-relaxed">Return to the main landing dashboard, student profile overview, and course introduction summary.</p>
-            </a>
-
-            <a href="impact.html" class="tile bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-slate-200 group block h-full min-h-[160px] md:min-h-[200px] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-cyan-400">
-                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition">Impact &rarr;</h3>
-                <p class="text-slate-700 text-xs md:text-sm leading-relaxed">Explore how studying literary structural devices and analytical frameworks changed my perspective on communication.</p>
-            </a>
-
-            <a href="growth.html" class="tile bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-slate-200 group block h-full min-h-[160px] md:min-h-[200px] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-cyan-400">
-                <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-2 group-hover:text-cyan-600 transition">Growth &rarr;</h3>
-                <p class="text-slate-700 text-xs md:text-sm leading-relaxed">Analyze my overall academic improvement, comprehensive writing milestones, revision tracking, and personal development.</p>
-            </a>
-
-        </div>
-    </section>
-
 </main>
 
 <script>
-// Parallax background scroll tracking engine
+// Parallax background handler
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.main-header');
     if (header) header.classList.toggle('shrink', window.scrollY > 50);
@@ -174,7 +370,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Scroll Reveal Intersection Observer Engine
+// Scroll Reveal Observer setup
 const reveal = document.querySelectorAll('.reveal-on-scroll');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -184,6 +380,56 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 reveal.forEach(el => observer.observe(el));
+
+// Magnetic 3D interaction selector running *only* for upper carousel cards (.tile)
+const mainTiles = document.querySelectorAll('.tile');
+mainTiles.forEach(tile => {
+    let tx = 0, ty = 0;
+    let cx = 0, cy = 0;
+
+    tile.addEventListener('mousemove', (e) => {
+        const r = tile.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+        const cx2 = r.width / 2;
+        const cy2 = r.height / 2;
+        tx = ((y - cy2) / cy2) * 10;
+        ty = ((x - cx2) / cx2) * 10;
+    });
+
+    tile.addEventListener('mouseleave', () => {
+        tx = 0; ty = 0;
+    });
+
+    function animate() {
+        cx += (tx - cx) * 0.08;
+        cy += (ty - cy) * 0.08;
+        tile.style.transform = `perspective(1200px) rotateX(${cx}deg) rotateY(${cy}deg) translateZ(0px)`;
+        requestAnimationFrame(animate);
+    }
+    animate();
+});
+
+// MODAL OVERLAY ROUTINES
+function openDeviceModal(title, text) {
+    const modal = document.getElementById('modal-container');
+    const box = document.getElementById('modal-box');
+    document.getElementById('modal-title').innerText = title;
+    document.getElementById('modal-desc').innerText = text;
+    
+    modal.classList.remove('opacity-0', 'pointer-events-none');
+    box.classList.remove('scale-95');
+    box.classList.add('scale-100');
+}
+
+function closeDeviceModal() {
+    const modal = document.getElementById('modal-container');
+    const box = document.getElementById('modal-box');
+    
+    modal.classList.add('opacity-0', 'pointer-events-none');
+    box.classList.remove('scale-100');
+    box.classList.add('scale-95');
+}
 </script>
 
 </body>
