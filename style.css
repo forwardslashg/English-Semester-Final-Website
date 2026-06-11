@@ -36,7 +36,7 @@ body {
 .parallax-bg {
     position: fixed;
     inset: 0;
-    background-image: url('static/bg.jpg');
+    background-image: url('static/rem.jpg');
     background-size: cover;
     background-position: center;
     transform: scale(1.2);
@@ -202,4 +202,14 @@ body {
     .header-title {
         font-size: 2rem;
     }
+}
+
+.rem-char {
+    background-image: url('static/rem.jpg') !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    color: inherit;
+    text-shadow: 0 0 2px black, 0 0 2px black;
 }
